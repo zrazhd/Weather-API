@@ -14,12 +14,11 @@ type WeatherResponse struct {
 
 func getWeather(w http.ResponseWriter, r *http.Request) {
 	city := r.PathValue("city")
-	_, err := w.Write([]byte("Some words"))
+	_, err := w.Write([]byte(city))
 	if err != nil {
 		log.Println("cant write in header")
 	}
 
-	fmt.Fprintf(w, city)
 }
 func main() {
 
